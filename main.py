@@ -23,7 +23,7 @@ def startup():
     # app.add_middleware(AuthenticationMiddleware())  # Add the middleware with your verification method to the whole application
     pass
     db = next(get_db())
-    models.Base.metadata.drop_all(engine)
+    # models.Base.metadata.drop_all(engine)
     models.Base.metadata.create_all(engine)
     # p1 = models.Position(name='Full Developer')
     # p2 = models.Position(name='Frontend')
