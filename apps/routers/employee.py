@@ -17,7 +17,7 @@ def get_employees_list(request: Request, db: Session = Depends(get_db)):
     context = {
         'request': request,
     }
-    return templates.TemplateResponse('/auth/logln.html', context)
+    return templates.TemplateResponse('/auth/logn.html', context)
 
 #
 # @api.post('/', name='create_employee')
