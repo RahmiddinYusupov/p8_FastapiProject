@@ -15,7 +15,9 @@ from faker import Faker
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory='static'), name='static')
-# app.mount("/media", StaticFiles(directory='media'), name='media')
+
+
+app.mount("/media", StaticFiles(directory='media'), name='media')
 
 
 @app.on_event("startup")
@@ -23,7 +25,7 @@ def startup():
     # app.add_middleware(AuthenticationMiddleware())  # Add the middleware with your verification method to the whole application
     pass
     db = next(get_db())
-    models.Base.metadata.drop_all(engine)
+    # models.Base.metadata.drop_all(engine)
     models.Base.metadata.create_all(engine)
     # p1 = models.Position(name='Full Developer')
     # p2 = models.Position(name='Frontend')
